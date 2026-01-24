@@ -48,7 +48,8 @@ export const proposalPayloadSchema = z.object({
   totalAmount: z.number(),
   contractText: z.string().optional(),
   evidencePhotos: z.array(z.string()).optional(),
-  formData: z.record(z.any()).optional(),
+  formData: z.record(z.string(), z.any()).optional(),
+
 });
 
 export type ProposalPayload = z.infer<typeof proposalPayloadSchema>;
